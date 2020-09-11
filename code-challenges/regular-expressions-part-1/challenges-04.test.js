@@ -40,7 +40,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-
+  let regex = /\d/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,7 +53,9 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  let regex = /[A-Z]\w*/g;
+  let results = str.match(regex);
+  return results ? results : [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,7 +65,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let newArray = [];
+  let regex = /^[A-Ja-j]\w+\b/;
+  arr.forEach(city => {
+    if (regex.test(city) === true) {
+      newArray.push(city);
+    }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +102,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let regex = /\w+\s/gi;
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
