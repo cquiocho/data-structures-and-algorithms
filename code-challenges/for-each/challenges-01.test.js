@@ -120,7 +120,7 @@ const fizzbuzz = (arr) => {
           outputArray.push(value);
       }
     });
-    return outputArray;
+    return outputArray; 
 };
 
 // describe('Testing challenge 4', () => {
